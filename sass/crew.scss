@@ -1,0 +1,209 @@
+@import "variables";
+@import "global";
+@import "mixins";
+@import "navigation";
+@import "utility";
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+main{
+    margin: 5rem 10rem 40px;
+    position: relative;
+    flex: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.content__main{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 8rem;
+}
+.content__heading{
+    text-transform: uppercase;
+    font: $heading-5;
+    letter-spacing: 4.75px;
+    & p{
+        color: $primary-light-color;
+        & span{
+            color: $secondary-color
+        }
+    }
+}
+.crew-content{
+
+    & .crew__text{
+        margin: 10rem 0 5rem;
+        & h2{
+            font: $heading-4;
+            text-transform: uppercase;
+            color: $secondary-color;
+            margin-bottom: 1.5rem;
+        }
+        & h1{
+            font: $heading-3;
+            color: $primary-light-color;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+
+        }
+        & p{
+            font: $body-text;
+            letter-spacing: 2.7px;
+            line-height: 2;
+            margin: 1rem 0;
+            color: $primary-color;
+        }
+    }
+    & .crew__nav{
+        margin-bottom: 5rem;
+        display: flex;
+        gap: 2rem;
+        & a{
+            background-color: $secondary-color;
+            width: 15px;
+            height: 15px;
+            border-radius: 7.5px;
+            transition: background-color 300ms ease-in-out;
+            &:hover{
+                background-color: $primary-light-color;
+            }
+        }
+    }
+}
+.crew-image{
+    display: flex;
+    justify-content: flex-end;
+    & img{
+        width: 90%;
+        height: auto;
+    }
+}
+@include breakpoint-down(small){
+    body{
+        background-image: url(../assets/crew/background-crew-mobile.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    main{
+        flex-direction: column;
+        margin: 1rem 1.5rem 0rem;
+        gap: 2rem;
+    }
+    .content__heading{
+        font: $nav-text;
+        text-align: center;
+        letter-spacing: 2.7px;
+    }
+    .content__main{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .crew-image{
+        order: -1;
+        border-bottom: 1px solid $secondary-color;
+        justify-content: center;
+        & img{
+            width: 50%;
+            height: auto;
+        }
+    }
+    .crew-content{
+        display: flex;
+        flex-direction: column;
+        & .crew__nav{
+            order: -1;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            & a{
+                width: 10px;
+                height: 10px;
+                border-radius: 5px;
+            }
+        }
+        & .crew__text{
+            margin: 0 0 3rem;
+            text-align: center;
+            & h2{
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+            & h1{
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            & p{
+                font-size: 0.9375rem;
+                letter-spacing: 0px;
+                line-height: 25px;
+            }
+        }
+    }
+}
+@include breakpoint-between(medium,medium) {
+    body{
+        background-image: url(../assets/crew/background-crew-tablet.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    main{
+        flex-direction: column;
+        margin: 2rem 2rem 0;
+        gap: 1rem;
+    }
+    .content__main{
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    .crew-content{
+        & .crew__text{
+            margin: 5rem 4rem;
+            text-align: center;
+            & h2{
+                font-size: 1.5rem;
+            }
+            & h1{
+                font-size: 2.5rem;
+            }
+            & p{
+                font-size: 1rem;
+                line-height: 28px;
+            }
+        }
+        & .crew__nav{
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+    }
+    .crew-image{
+        display: flex;
+        justify-content: center;
+        & img{
+            width: 60%;
+            height: auto;
+        }
+    }
+}
+
+@include breakpoint-up(large){
+    body{
+        background-image: url(../assets/crew/background-crew-desktop.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    main{
+        top: 40px;
+    }
+    .crew-content{
+        flex: 1;
+    }
+    .crew-image{
+        flex: 1;
+    }
+}
+#crew-active{
+    background-color: $primary-light-color;
+}

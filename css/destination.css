@@ -1,0 +1,496 @@
+/*Colors*/
+/*Fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap");
+/* RESETS Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* RESETS Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* RESETS Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* RESETS Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* RESETS Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  font-family: "Barlow Condensed", sans-serif;
+  overflow-x: hidden;
+}
+
+/* RESETS A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* RESETS Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* RESETS Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* RESETS Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+nav {
+  display: flex;
+  position: relative;
+  padding-left: 55px;
+  justify-content: space-between;
+}
+nav #logo {
+  display: grid;
+  place-items: center;
+}
+
+.hamburger {
+  display: grid;
+  place-items: center;
+}
+.hamburger:hover {
+  cursor: pointer;
+}
+
+.menu {
+  font: 1rem "Barlow Condensed", sans-serif;
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  position: relative;
+  width: 65%;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(40.7742px);
+  padding: 1.8rem 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.menu::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 1px;
+  width: 40%;
+  opacity: 0.25;
+  left: -37%;
+  background: #FFF;
+}
+.menu a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+}
+.menu a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 3px;
+  left: 0;
+  right: 0;
+  bottom: -28px;
+  background: #FFF;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+.menu a:hover::before {
+  opacity: 0.5;
+}
+
+.NavbarMenu {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 70%;
+  height: 100vh;
+  background: rgba(61, 61, 66, 0.4);
+  backdrop-filter: blur(4rem);
+  z-index: 2;
+  transition: transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 7%;
+  right: 13%;
+  color: #D0D6F9;
+  transform: scale(1.1);
+  z-index: 4;
+  cursor: pointer;
+}
+
+.NavbarMenu ul {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  padding: 7rem 0px 0px 2rem;
+  list-style: none;
+}
+
+.NavbarMenu li {
+  margin: 2rem 0px;
+}
+
+.NavbarMenu a {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  width: 100%;
+  color: #D0D6F9;
+  font: 1.3rem "Barlow Condensed", sans-serif;
+  letter-spacing: 2px;
+}
+
+.NavbarMenu a:hover {
+  border-right: 3px solid #FFF;
+}
+
+.NavbarMenu span {
+  color: #FFF;
+}
+
+.slide-out {
+  transform: translateX(100%);
+}
+
+.slide-in {
+  transform: translateX(0%);
+}
+
+@media (max-width: 43.0625em) {
+  nav {
+    padding: 15px;
+  }
+}
+@media (min-width: 43.125em) and (max-width: 63.9375em) {
+  .menu::before {
+    display: none;
+  }
+}
+@media (min-width: 64em) {
+  nav {
+    top: 40px;
+  }
+}
+#nav-active {
+  position: relative;
+}
+#nav-active::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 3px;
+  left: 0;
+  right: 0;
+  bottom: -28px;
+  background: #FFF;
+  opacity: 1;
+}
+#nav-active:hover::before {
+  opacity: 0.5;
+}
+
+@media (max-width: 43.0625em) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 43.125em) and (max-width: 63.9375em) {
+  .hide-tablet {
+    display: none;
+  }
+}
+
+@media (min-width: 64em) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  margin: auto 10rem;
+  position: relative;
+  flex: auto;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+  color: #FFF;
+}
+
+.dest_heading {
+  width: 100%;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+.dest_heading p {
+  font: 1.75rem "Barlow Condensed", sans-serif;
+  letter-spacing: 4.75px;
+  text-transform: uppercase;
+}
+.dest_heading p span {
+  color: hsla(0deg, 0%, 100%, 0.5);
+  font-weight: bolder;
+}
+
+.dest_content_container {
+  flex: auto;
+  width: 100%;
+  display: flex;
+  gap: 8rem;
+  justify-content: center;
+}
+
+.dest_image {
+  display: grid;
+  place-items: center;
+  padding: 0.5rem;
+}
+.dest_image img {
+  width: 100%;
+  height: auto;
+}
+
+.dest_content {
+  display: flex;
+  flex-direction: column;
+}
+.dest_content .planet_menu {
+  display: flex;
+  gap: 2rem;
+  padding: 0.8rem 0;
+}
+.dest_content .planet_menu a {
+  color: #FFF;
+  text-decoration: none;
+  letter-spacing: 2.7px;
+  display: block;
+  font: 1rem "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  position: relative;
+}
+.dest_content .planet_menu a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 3px;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+  background: #FFF;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+.dest_content .planet_menu a:hover {
+  cursor: pointer;
+}
+.dest_content .planet_menu a:hover::before {
+  opacity: 0.5;
+}
+.dest_content .planet_content {
+  border-bottom: 1px solid hsla(0deg, 0%, 100%, 0.5);
+}
+.dest_content .planet_content h1 {
+  font: 6.3rem "Bellefair", sans-serif;
+  margin: 1.25rem 0;
+}
+.dest_content .planet_content p {
+  font: 0.88rem "Barlow Condensed", sans-serif;
+  letter-spacing: 2.7px;
+  line-height: 2;
+  margin: 1rem 0;
+  color: #D0D6F9;
+  margin-bottom: 3rem;
+}
+.dest_content .planet_stats {
+  display: flex;
+  text-transform: uppercase;
+}
+.dest_content .planet_stats p {
+  flex: 1;
+  margin-top: 1.5rem;
+  line-height: 2.5rem;
+}
+.dest_content .planet_stats .ptitle {
+  font: 0.88rem "Barlow Condensed", sans-serif;
+  color: #D0D6F9;
+  letter-spacing: 2.36px;
+}
+.dest_content .planet_stats .pcont {
+  font: 1.75rem "Bellefair", sans-serif;
+}
+
+@media (max-width: 43.0625em) {
+  body {
+    background-image: url(../assets/destination/background-destination-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  main {
+    margin: 1rem 1.5rem;
+  }
+  .dest_heading {
+    margin-top: 0;
+  }
+  .dest_heading p {
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 2.7px;
+  }
+  .dest_content_container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .dest_image img {
+    width: 170px;
+    height: 170px;
+  }
+  .dest_content .planet_menu {
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+    letter-spacing: 2.36px;
+  }
+  .dest_content .planet_content {
+    text-align: center;
+  }
+  .dest_content .planet_content h1 {
+    margin-top: 2rem;
+    font-size: 3.5rem;
+  }
+  .dest_content .planet_content p {
+    line-height: 1.5625rem;
+    font-size: 0.9375rem;
+  }
+  .dest_content .planet_stats {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media (min-width: 43.125em) and (max-width: 63.9375em) {
+  body {
+    background-image: url(../assets/destination/background-destination-tablet.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  main {
+    margin: 2rem 2rem;
+  }
+  .dest_heading p {
+    font-size: 1.25rem;
+    letter-spacing: 3.38px;
+  }
+  .dest_content_container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .dest_image img {
+    width: 300px;
+    height: 300px;
+  }
+  .dest_content .planet_menu {
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2.7px;
+  }
+  .dest_content .planet_content {
+    text-align: center;
+  }
+  .dest_content .planet_content h1 {
+    margin-top: 2rem;
+    font-size: 5rem;
+  }
+  .dest_content .planet_content p {
+    line-height: 1.75rem;
+    font-size: 1rem;
+  }
+  .dest_content .planet_stats {
+    text-align: center;
+  }
+}
+@media (min-width: 64em) {
+  body {
+    background-image: url(../assets/destination/background-destination-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  main {
+    top: 40px;
+  }
+  .dest_image {
+    width: 445px;
+  }
+  .dest_content {
+    width: 445px;
+  }
+}
+#destination-active {
+  position: relative;
+}
+#destination-active::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 3px;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+  background: #FFF;
+  opacity: 1;
+}
+#destination-active:hover::before {
+  opacity: 0.5;
+}/*# sourceMappingURL=destination.css.map */

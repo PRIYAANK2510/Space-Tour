@@ -1,0 +1,17 @@
+//UTILITY CLASS TO HIDE ELEMENTS
+.hide-mobile{
+    @include breakpoint-down(small){
+        display: none;
+    }
+  }
+  
+  .hide-tablet {
+    @include breakpoint-between(medium,medium) {
+        display: none;
+    }
+  }
+  .hide-desktop{
+    @include breakpoint-up(large){
+        display: none;
+    }
+  }
