@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot](/screenshot.jpg)
+![Screenshot](https://raw.githubusercontent.com/PRIYAANK2510/Space-Tour/main/Screenshot.jpg)
 
 
 ### Links
