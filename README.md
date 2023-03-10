@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/PRIYAANK2510/Space-Tour]
-- Live Site URL: [https://space-tour-puce.vercel.app/]
+- Solution URL:  https://github.com/PRIYAANK2510/Space-Tour
+- Live Site URL:  https://space-tour-puce.vercel.app/
 
 ## My process
 
